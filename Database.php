@@ -21,11 +21,11 @@ public function __construct( $config , $user = 'root', $password = '' ) {
 }
 
 
-public function query($query) {
+public function query($query ,$params = []) {
 
         $stmt = $this->connection->prepare($query);
 
-        $stmt -> execute(); 
+        $stmt -> execute( $params ); 
 
         return $stmt;
 

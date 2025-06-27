@@ -14,15 +14,19 @@ $db = new Database( $config['database'] );
 
 //$db->query('INSERT INTO posts (id,title) VALUES (6,"vogels singen"),(7,"de honden aan  het wandelen")');
 
-$posts = $db->query('SELECT * FROM posts')->fetchAll( PDO::FETCH_ASSOC );
+$id = $_GET['id'];
+
+$query = "SELECT * FROM posts WHERE id = :id";
+
+$posts = $db->query($query , [ ':id' => $id])->fetch();
 
 // $posts =$stmt->fetchAll( PDO::FETCH_ASSOC );
 
-//dd($posts);
+dd($posts);
 
-foreach ( $posts as $post ) {
-    echo "<h2>{$post['title']}</h2>";
-    echo "<h3>{$post['id']}</h3>";
+// foreach ( $posts as $post ) {
+//     echo "<h2>{$post['title']}</h2>";
+//     echo "<h3>{$post['id']}</h3>";
 
-}
+// }
 
