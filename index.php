@@ -3,11 +3,11 @@ require "functions.php";
 
 require "Database.php";
 
-//require "router.php";
+require "router.php";
 
-$config = require('config.php');
+// $config = require('config.php');
 
-$db = new Database( $config['database'] );
+// $db = new Database( $config['database'] );
 
 
 //$db->query('DELETE FROM  posts WHERE id=7');
@@ -16,13 +16,12 @@ $db = new Database( $config['database'] );
 
 //$id = $_GET['id'];
 
-$query = "SELECT * FROM posts";
+// $query = "SELECT * FROM posts";
 
-$posts = $db->query($query)->fetchAll();
+// $posts = $db->query($query)->fetchAll();
 
 // $posts =$stmt->fetchAll( PDO::FETCH_ASSOC );
 
-dd($posts);
 
 // foreach ( $posts as $post ) {
 //     echo "<h2>{$post['title']}</h2>";
