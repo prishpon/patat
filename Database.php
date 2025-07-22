@@ -3,6 +3,9 @@
 class Database {
 
 public $connection;
+
+public $statement;
+
 protected $mysql;
 protected $host;
 protected $dbname;
@@ -23,24 +26,33 @@ public function __construct( $config , $user = 'root', $password = '' ) {
 
 public function query($query ,$params = []) {
 
-        $stmt = $this->connection->prepare($query);
+        $this->statement = $this->connection->prepare($query);
 
-        $stmt -> execute( $params ); 
+        $this->statement-> execute( $params ); 
 
-        return $stmt;
+        return $this;
 
 }
 
+public function find() {
 
-public function set_dns( $mysql, $host, $dbname, $user  ) {
-      $this->mysql = $mysql;
-      $this->host = $host;
-      $this->dbname= $dbname;
-      $this->user = $user;
+    return $this->statement->fetch();
+
 }
 
-public function get_dns() {
-    return $this->mysql;
+public function get() {
+    return $this->statement->fetchAll();
+}
+
+public function findOrFail() {
+    $result = $this->find();
+
+    if ( !$result ) {
+        abort();
+    }
+
+    return $result;
+
 }
 
 }

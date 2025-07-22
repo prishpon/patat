@@ -9,17 +9,11 @@ $heading = "Single note";
 
 $note = $db->query('SELECT * FROM notes WHERE id = :id' ,[
     'id' => $_GET['id']
-])->fetch();
-
-if (!$note) {
-    abort();
-}
+])->findOrFail();
 
 $currentUserId = 1;
 
-if ($note['user_id'] !== $currentUserId ) {
-    abort(Response::FORBIDDEN);
-}
+authorize( $note['user_id'] === $currentUserId );
 
 //$notes = $db->query('SELECT * FROM notes WHERE user_id =2')->fetchAll();
 
