@@ -10,10 +10,18 @@ $routes =
   '/note' => 'controllers/note.php'
 ];
 
-function abort() {
+function abort( $c = 404 ) {
     http_response_code( $code = 404 );
 
-    require "view/{$code}.php";
+    
+
+    if($c == 403) {
+         require "view/{$c}.php";
+    } else {
+        require "view/{$code}.php";
+    }
+
+
 
     die();
 }
