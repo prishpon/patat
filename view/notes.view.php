@@ -10,13 +10,16 @@
         <?php foreach( $notes as $note) :  ?>
             <li>
               <a class="text-blue-500" href="/note?id=<?php echo $note['id']; ?>">
-              <?php echo $note['body']; ?>
+                 <?php echo htmlspecialchars($note['body']); ?>
               </a>
+               <a href="notes?act=delete&id=<?php echo $note['id']; ?>" class="text-blue-500 hover:underline"> Delete Note</a>
             </li>
          <?php endforeach; ?>  
      </ul>
 
      <a href="/notes/create" class="text-blue-500 hover:underline"> Add new Note</a>
+
+     
 
     </div>
   

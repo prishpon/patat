@@ -17,9 +17,25 @@
                     <!-- note -->
                     <div>
                     <label for="body" class="block text-gray-700 font-medium mb-1">Body</label>
-                    <input type="textarea" id="body" name="body" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    </div>
+                
+                    <textarea
+                         id="body" 
+                         name="body" 
+                         rows="3"
+                         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                         <?php 
+                            if(isset($_POST['body'])) {
+                                echo $_POST['body'];
+                            }
+                          ?>
+
+                    </textarea>
+                            <?php
+                                if(isset( $errors['body'])) {
+                                    echo $errors['body'];
+                                }
+                            ?>
+                        </div>
                     <!-- Submit Button -->
                     <div>
                     <button type="submit"
