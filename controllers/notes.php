@@ -16,4 +16,10 @@ if( isset($_GET['act']) && $_GET['act'] === "delete") {
     ]);
 }
 
+if( isset($_GET['act']) && $_GET['act'] === "edit") {
+        $db->query('UPDATE FROM notes WHERE id = :id' ,[
+        'id' => $_GET['id']
+    ]);
+}
+
 require "view/notes.view.php";

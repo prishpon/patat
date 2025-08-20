@@ -12,7 +12,8 @@
               <a class="text-blue-500" href="/note?id=<?php echo $note['id']; ?>">
                  <?php echo htmlspecialchars($note['body']); ?>
               </a>
-               <a href="notes?act=delete&id=<?php echo $note['id']; ?>" class="text-blue-500 hover:underline"> Delete Note</a>
+               <a href="notes?act=delete&id=<?php echo $note['id']; ?>" class="text-white-500 hover:underline py-2 px-2" style="background-color:red;"> Delete Note</a>
+                <a href="notes?act=edit&id=<?php echo $note['id']; ?>" class="text-white-500 hover:underline py-2 px-2" style="background-color:yellow;"> Delete Note</a>
             </li>
          <?php endforeach; ?>  
      </ul>
