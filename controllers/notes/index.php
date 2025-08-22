@@ -22,4 +22,4 @@ if( isset($_GET['act']) && $_GET['act'] === "edit") {
     ]);
 }
 
-require "view/notes.view.php";
+require "view/notes/index.view.php";

@@ -17,4 +17,4 @@ authorize( $note['user_id'] === $currentUserId );
 
 //$notes = $db->query('SELECT * FROM notes WHERE user_id =2')->fetchAll();
 
-require "view/note.view.php";
+require "view/notes/show.view.php";
