@@ -1,10 +1,8 @@
 <?php
 
-$config = require('config.php');
+$config = require base_path('config.php');
 
 $db = new Database( $config['database'] );
-
-$heading = "My Notes";
 
 
 $notes = $db->query('SELECT * FROM notes WHERE user_id = 1')->get();
@@ -16,10 +14,9 @@ if( isset($_GET['act']) && $_GET['act'] === "delete") {
     ]);
 }
 
-if( isset($_GET['act']) && $_GET['act'] === "edit") {
-        $db->query('UPDATE FROM notes WHERE id = :id' ,[
-        'id' => $_GET['id']
-    ]);
-}
 
-require "view/notes/index.view.php";
+
+require view("notes/index.view.php" , [
+    'heading' => 'My Notes ff',
+    'notes'  => $notes
+]);
