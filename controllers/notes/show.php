@@ -10,7 +10,7 @@ $heading = "Single note";
 
 // dd($_SERVER);
 
-$currentUserId = 31;
+$currentUserId = 1;
 
 if( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
 
@@ -33,7 +33,6 @@ $note = $db->query('SELECT * FROM notes WHERE id = :id' ,[
     'id' => $_GET['id']
 ])->findOrFail();
 
-$currentUserId = 1;
 
 authorize( $note['user_id'] === $currentUserId );
 
