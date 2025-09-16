@@ -1,6 +1,7 @@
 <?php
 
 use Core\Response;
+use Core\Validator;
 
 function dd( $value ) {
     echo '<pre>';

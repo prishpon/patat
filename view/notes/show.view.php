@@ -12,6 +12,12 @@
        <p>
             <?php echo htmlspecialchars($note['body']); ?>
        </p>
+       <form method="POST" action="">
+          <input type="text" hidden>
+          <button class="text-red-500 mt-20">
+              Delete note
+          </button>
+       </form>
     </div>
   </main>
 
