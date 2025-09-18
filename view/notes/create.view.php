@@ -6,7 +6,7 @@
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <p>
 
-                <form class="bg-white p-8 rounded-lg shadow-md w-full max-w-md space-y-6" method="POST">
+                <form action="/notes" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md space-y-6" method="POST">
                         <a href="/notes" class="bg-blue-600 text-white font-semibold py-4 px-4 rounded-md hover:bg-blue-700 transition-colors">
                             go back
                         </a>
