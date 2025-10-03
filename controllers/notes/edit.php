@@ -7,8 +7,6 @@ $db = App::resolve(Database::class);
 
 $heading = "Single note";
 
-//dd($_SERVER);
-
 $currentUserId = 1;
 
 $note = $db->query('SELECT * FROM notes WHERE id = :id', [
@@ -18,11 +16,8 @@ $note = $db->query('SELECT * FROM notes WHERE id = :id', [
 
 authorize($note['user_id'] === $currentUserId);
 
-//$notes = $db->query('SELECT * FROM notes WHERE user_id =2')->fetchAll();
-
-require "view/notes/show.view.php";
-
-require view("notes/show.view.php", [
-    'heading' => 'My note',
-    'note'  => $note
+view("notes/edit.view.php", [
+    'heading' => 'Create note',
+    //'errors'  => $errors,
+    'note'    => $note
 ]);
