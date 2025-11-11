@@ -1,0 +1,32 @@
+{
+    "name": "przem/patat",
+    "authors": [
+        {
+            "name": "prishpon",
+            "email": "prishpon@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/collections": "^10.49"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "App\\": "App/",
+            "Config\\": "Config/",
+            "Database\\": "Database/",
+            "Routes\\": "Routes/",
+            "Views\\": "Views/",
+            "Middlewares\\": "Middlewares/",
+            "Helpers\\": "Helpers/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.36"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
